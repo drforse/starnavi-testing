@@ -27,7 +27,10 @@ NGINX_PORT=nginx port
 ## Installation and launch
 1. clone repo `git clone https://github.com/drforse/starnavi-testing`  
 2. enter repo directory `cd starnavi-testing`  
-3. run docker containers `docker-compose up -d`  
+3. create config file `copy config.ini.template config.ini`  
+4. create .env file `copy .env.template .env`  
+5. fill in config.ini and .env according to section *Configuration*
+6. run docker containers `docker-compose up -d`  
 ## bot
 `python bot.py` to run random users/posts/likes creation  
 `python bot.py --clear` to clear all randomly created users/posts/likes  
