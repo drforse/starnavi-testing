@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "testing"
+version = "0.1.0"
+description = ""
+authors = ["drforse <george.lifeslice@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.73.0"
+SQLAlchemy = {extras = ["asyncio"], version = "^1.4.31"}
+aiomysql = "^0.0.22"
+uvicorn = "^0.17.4"
+alembic = "^1.7.6"
+passlib = "^1.7.4"
+bcrypt = "^3.2.0"
+python-jose = "^3.3.0"
+python-multipart = "^0.0.5"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.1"
+httpx = "^0.22.0"
+pytest-anyio = "^0.0.0"
+mypy = "^0.931"
+types-atomicwrites = "^1.4.3"
+types-certifi = "^2021.10.8"
+types-orjson = "^3.6.2"
+types-python-dateutil = "^2.8.9"
+types-requests = "^2.27.11"
+types-setuptools = "^57.4.9"
+types-ujson = "^4.2.1"
+sqlalchemy2-stubs = "^0.0.2-alpha.20"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

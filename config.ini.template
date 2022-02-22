@@ -1,0 +1,15 @@
+[web]
+debug = 1
+sa_echo = 1
+access_token_expire_seconds = 3000
+jwt_algorithm = HS256
+jwt_secret_key = 09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7  # openssl rand -hex 32
+[db]
+sa_url = mysql+aiomysql://insecure_user:insecure_pwd@db:8880/starnavi
+alembic_sa_url = mysql+pymysql://insecure_user:insecure_pwd@db:8880/starnavi
+test_sa_url = mysql+aiomysql://{username}:{password}@localhost:8880/starnavi_test  # not meant to be run in docker
+[bot]
+number_of_users = 10
+max_posts_per_user = 10
+max_likes_per_user = 10
+base_url = http://web:8000

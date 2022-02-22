@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "created_at": 1645462963,
+    "text": "Hello World!"
+  }, 
+  {
+    "id": 2,
+    "user_id": 1,
+    "created_at": 1645462960,
+    "text": "How are you, people?"
+  },
+  {
+    "id": 3,
+    "user_id": 2,
+    "created_at": 1645462432,
+    "text": "test"
+  }
+]

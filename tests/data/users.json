@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "username": "static",
+    "password": "static",
+    "last_request_at": 1645462963,
+    "last_login_at": 1645462873
+  },
+  {
+    "id": 2,
+    "username": "static1",
+    "password": "static1",
+    "last_request_at": 1645462432,
+    "last_login_at": 1645462231
+  },
+  {
+    "id": 3,
+    "username": "static2",
+    "password": "static2",
+    "last_request_at": 1645462854,
+    "last_login_at": 1645462123
+  }
+]

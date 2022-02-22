@@ -1,0 +1,41 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - ./config.ini:/app/config.ini
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+  db:
+    image: mysql:8.0
+    volumes:
+      - database:/var/lib/mysql
+    ports:
+      - ${MYSQL_PORT:-8880}:${MYSQL_PORT:-8880}
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?err}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:?err}
+      MYSQL_USER: ${MYSQL_USER:?err}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?err}
+      MYSQL_TCP_PORT: ${MYSQL_PORT:-8880}
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost", "--port", "${MYSQL_PORT:-8880}",
+              "-u", "${MYSQL_USER}",
+              "--password=${MYSQL_PASSWORD}" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "${NGINX_PORT:-80}:80"
+    depends_on:
+      - web
+    restart: unless-stopped
+volumes:
+  database: {}
