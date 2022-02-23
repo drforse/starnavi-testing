@@ -38,6 +38,6 @@ async def db_session():
         await s.commit()
     async with DBSession() as s:
         yield s
-    # async with engine.begin() as conn:
-    #     await conn.run_sync(sa_models.Base.metadata.drop_all)
-    # await engine.dispose()
+    async with engine.begin() as conn:
+        await conn.run_sync(sa_models.Base.metadata.drop_all)
+    await engine.dispose()
