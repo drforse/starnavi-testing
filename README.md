@@ -29,14 +29,17 @@ NGINX_PORT=nginx port
 2. enter repo directory `cd starnavi-testing`  
 3. create config file `cp config.ini.template config.ini`  
 4. create .env file `cp .env.template .env`  
-5. fill in config.ini and .env according to section *Configuration*
+5. fill in config.ini and .env according to section *Configuration*  
 6. run docker containers `docker-compose up -d`  
 ## bot
+1. make sure you are in the root project directory  
+2. enter web container `docker exec -it <container_id> /bin/bash`  
+3. run of the following:  
 `python bot.py` to run random users/posts/likes creation  
 `python bot.py --clear` to clear all randomly created users/posts/likes  
 `python bot.py --help` to check help on bot  
 ## tests
-to run tests you need to have mysql installed and launched and test_sa_url set in config.ini  
+to run tests you need to have mysql installed and launched and test_sa_url set in config.ini (don't forget to create test table)  
 1. make sure you are in the root project directory  
 2. create environment and install packages `poetry install`  
 3. run tests `pytest`  
