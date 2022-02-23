@@ -43,3 +43,5 @@ to run tests you need to have mysql installed and launched and test_sa_url set i
 1. make sure you are in the root project directory  
 2. create environment and install packages `poetry install`  
 3. run tests `pytest`  
+## Endpoints
+See docs on /docs endpoint  
