@@ -23,7 +23,8 @@ def main():
         token = requests.post(cfg.BASE_URL + "/token", data={"username": f"bot-user{user_num}", "password": f"pwd"})
         token = token.json()["access_token"]
         for _ in range(random.randint(1, cfg.MAX_POSTS_PER_USER)):
-            post = requests.post(cfg.BASE_URL + "/posts?fields=user", json={}, headers={"Authorization": f"Bearer {token}"})
+            post = requests.post(cfg.BASE_URL + "/posts?fields=user", json={"text": "text"},
+                                 headers={"Authorization": f"Bearer {token}"})
             posts_ids.append(post.json()["id"])
             logging.info(f"post created: {post.json()}")
 
